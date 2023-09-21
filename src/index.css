@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; 
+  font-family: 'Roboto', sans-serif;
+}
+
+.container1{
+  background: linear-gradient(90deg, rgba(7, 4, 74, 0.879) 9%, rgba(21,76,121,1) 55%, rgb(35, 140, 161) 100%);
+  animation: backgroundAnimation 10s infinite; 
+  height: 100%;
+}
+
+.container1.nocturneMode{
+  background: linear-gradient(90deg, rgb(0, 0, 0) 9%, rgb(0, 4, 7) 55%, rgb(12, 24, 54) 100%);
+}
+
+
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0% 50%; /* Inicio de la animación */
+  }
+  100% {
+    background-position: 100% 50%; /* Fin de la animación */
+  }
+}
+
+.container1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container1 h2{
+  color: aliceblue;
+  font-weight: 900;
+}
+
+.container1 h1{
+  font-size: 40px;
+  color: aliceblue;
+  font-weight: 900;
+  margin-top: 80px;
+}
+
+.container2 img{
+  margin-left: 12%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.container2{
+  align-items: center;
+  gap: 15px;
+  margin-top: 50px;
+  display: flex;
+  width: 100%;
+}
+
+/* .container2 {
+  opacity: 0; 
+  transform: translateY(20px); 
+  transition: opacity 2s ease, transform 1s ease; 
+}
+
+.container2.active {
+  opacity: 1;
+  transform: translateY(0);
+} */
+
+.description{
+  display: flex;
+  align-items: flex-end;
+  gap: 80px;
+}
+.description p{
+  width: 650px;
+  color: aliceblue;
+  margin-top: 80px;
+}
+.color{
+  font-weight: 700;
+  color: #0fc7af;
+  cursor: pointer;
+}
+
+.description img{
+  width: 400px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.darkMode{
+  cursor: pointer;
+  position: fixed;
+  font-size: 2rem;
+  right: 80px;
+  top: 30px;
+  -webkit-text-stroke: 1px white;
+}
+
+.bi-moon-stars{
+  -webkit-text-stroke: 0px;
+}
+
+/* Redes sociales*/
+
+.rs{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 65px;
+  height: 65px;
+  top: 70px;
+  left: 82%;
+  font-size: 30px;
+  color: white;
+}
+
+/* Experience */
+.experience{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.experience p{
+  color: white;
+  font-size: 15px;
+}
+
+/* Card */
+
+.container1.nocturneMode.card:hover {
+  box-shadow: 0 4px 8px rgba(180, 180, 179, 0.934);
+  background-color: #333;
+  color: white;
+}
+
+.components{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+
+.component1{
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.component2 {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.colages{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.colages img{
+  width: 30%;
+  height: 40%;
+  border-radius: 10px;
+}
+
+.img1{
+  margin-top: 25px;
+  margin-left: 20px;
+}
+
+.img2{
+  position: absolute;
+  bottom: 25px;
+  right: 150px;
+}
+
+.cards{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly; 
+  flex-wrap:wrap; 
+  margin-top: 30px;
+}
+
+.card {
+  border: 1.3px solid lightslategray;
+  box-shadow: 0 4px 8px rgba(1, 1, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 10px;
+  background: linear-gradient(90deg, rgba(14, 9, 101, 0.581) 9%, rgba(21, 76, 121, 0.767));
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 1.7);
+}
+
+.card img {
+  margin-left: 8px;
+  width: 85%;
+  object-fit: cover;
+}
+
+/*foother*/
+
+.containerF {
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.footer {
+  padding: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer i {
+  font-size: 34px;
+  margin:10px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer i:hover {
+  cursor: pointer;
+  color: #cdcccc;
+  box-shadow: 0 6px 8px rgb(146, 146, 146);
+}
+
+.footer p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .card { 
+    width: calc(50% - 20px);
+  }
+}
+
+
+
+
+
+
