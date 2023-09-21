@@ -11,14 +11,14 @@ import java from "./assets/images/java.webp";
 import b from "./assets/images/boo.png";
 import en from "./assets/images/en.webp";
 import git from "./assets/images/git.png";
+import ipjbe from "./assets/images/ipjbe.webp";
 import cesde from "./assets/images/cesde.png";
 import funlam from "./assets/images/funlam.png";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Menu from "./assets/components/Menu";
 import Footer from "./assets/components/Footer";
 
-
-<Menu/>
+<Menu />;
 
 function Card({ title, imageUrl }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -56,13 +56,9 @@ function App() {
           <img src={profile} alt="photo" />
           <h2>Adrian Jiménez Hernández</h2>
         </section>
-        <div className="rs">
-          <i className="bi bi-github"></i>
-          <i className="bi bi-linkedin"></i>
-        </div>
         <h1> Web Developer</h1>
         <div className="description">
-          <img src={dev} alt="post" />
+          <img className="rotating-image" src={dev} alt="post" />
           <div>
             <p>
               Soy un desarrollador de software con amplia experiencia en
@@ -119,8 +115,9 @@ function App() {
                 src={funlam}
                 alt="Funlam"
                 title="Licenciatura en Inglés"
-                // Año inicio :02-2000
-                //Año fin :09-2011
+                p={"sdasadsadasd"}
+                // Año inicio :02-2015
+                //Año fin :09-2020
               />
               <img
                 className="img2"
@@ -130,14 +127,29 @@ function App() {
                 // Año inicio :06-2022
                 //Año fin :09-2023
               />
+              <img
+                className="img3"
+                src={ipjbe}
+                alt="ipjbe"
+                
+                // Año inicio :06-2000
+                //Año fin :09-2011
+              />
+              
             </div>
           </section>
         </section>
         <div className="experience">
           <h1>Formación académica</h1>
           <p>
-            He estado haciendo desarrollo web durante 1 año y siempre estoy
-            ansioso por aprender más en esta industria.
+            Durante el último año, he estado inmerso en el emocionante mundo del
+            desarrollo web, y mi deseo constante de aprender y crecer en esta
+            industria no ha hecho más que aumentar. Además, cuento con una
+            formación técnica en el SESDE como desarrollador de software y
+            también con una licenciatura en Inglés de la Universidad Católica
+            Luis Amigó. Estas experiencias educativas me han brindado una sólida
+            base de conocimientos y habilidades que estoy ansioso por aplicar y
+            expandir en mi carrera en el desarrollo web.
           </p>
         </div>
         <Footer />
