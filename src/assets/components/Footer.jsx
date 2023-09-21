@@ -1,21 +1,28 @@
-import React from "react";
+import React, {useState} from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import Contacto from "./Contacto";
 
 const Footer = () => {
   const linkedinURL ="https://www.linkedin.com/in/adrian-alexis-jimenez-hernandez-a9a393241/";
   const githubURL = "https://github.com/adrianjimenezhe";
-  const gmail = "";
+
+  const [clickContact, setclickContact] = useState(false)
+  const handleClick = () =>{
+    setclickContact(!clickContact)
+  }
+
   return (
     <section className="containerF">
+      {clickContact && (<Contacto/>)}
       <div className="footer">
-        <div>
+        <div className="footers">
           <a href={githubURL} target="_blank">
             <i className="bi bi-github"></i>
           </a>
           <a href={linkedinURL} target="_blank">
             <i className="bi bi-linkedin"></i>
           </a>
-          <a href={gmail} target="_blank">
+          <a onClick={handleClick} target="_blank">
             <i className="bi bi-envelope-check"></i>
           </a>
         </div>

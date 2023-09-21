@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import profile from "./assets/images/photo.jpg";
 import dev from "./assets/images/dev.png";
@@ -23,6 +23,7 @@ import Footer from "./assets/components/Footer";
 function Card({ title, imageUrl }) {
   const [isHovered, setIsHovered] = useState(false);
 
+  
   return (
     <div
       className={`card ${isHovered ? "hovered" : ""}`}
@@ -42,6 +43,43 @@ function App() {
     setDarknessMode(!darknessMode);
   };
 
+  const [isActive, setIsActive] = useState(false);
+
+  // Función para verificar si el elemento está en el viewport
+  function isInViewport(element) {
+    var rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  // Función para activar el efecto cuando el elemento está en el viewport
+  function activateEffect() {
+    const container = document.querySelector(".container2");
+    
+    if (container && isInViewport(container)) {
+      setIsActive(true);
+    } else {
+      setIsActive(false);
+    }
+  }
+
+  // Agregar un event listener para el evento de scroll al montar el componente
+  useEffect(() => {
+    window.addEventListener("scroll", activateEffect);
+
+    // Limpieza del event listener al desmontar el componente
+    return () => {
+      window.removeEventListener("scroll", activateEffect);
+    };
+  }, []);
+
+  
+
+
   return (
     <section className="">
       <section className={`container1 ${darknessMode ? "nocturneMode" : ""}`}>
@@ -52,7 +90,7 @@ function App() {
           onClick={handleDarknessMode}
         ></i>
 
-        <section className="container2">
+        <section className={`container2 ${isActive ? "active" : ""}`}>
           <img src={profile} alt="photo" />
           <h2>Adrian Jiménez Hernández</h2>
         </section>
@@ -108,8 +146,16 @@ function App() {
             </div>
           </section>
           <section className="component2">
-            <h1>Universidades</h1>
+            <h1>Certificados</h1>
             <div className="colages">
+              <img
+                className="img3"
+                src={ipjbe}
+                alt="ipjbe"
+
+                // Año inicio :06-2000
+                //Año fin :09-2011
+              />
               <img
                 className="img1"
                 src={funlam}
@@ -127,15 +173,6 @@ function App() {
                 // Año inicio :06-2022
                 //Año fin :09-2023
               />
-              <img
-                className="img3"
-                src={ipjbe}
-                alt="ipjbe"
-                
-                // Año inicio :06-2000
-                //Año fin :09-2011
-              />
-              
             </div>
           </section>
         </section>
